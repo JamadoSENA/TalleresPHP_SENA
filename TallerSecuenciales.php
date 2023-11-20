@@ -40,6 +40,21 @@
     <li class="nav-item" role="presentation">
         <button class="nav-link" id="ejercicio-9" data-bs-toggle="tab" data-bs-target="#ejercicio-9-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Ejercicio 9</button>
     </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="ejercicio-10" data-bs-toggle="tab" data-bs-target="#ejercicio-10-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Ejercicio 10</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="ejercicio-11" data-bs-toggle="tab" data-bs-target="#ejercicio-11-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Ejercicio 11</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="ejercicio-12" data-bs-toggle="tab" data-bs-target="#ejercicio-12-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Ejercicio 12</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="ejercicio-13" data-bs-toggle="tab" data-bs-target="#ejercicio-13-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Ejercicio 13</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="ejercicio-14" data-bs-toggle="tab" data-bs-target="#ejercicio-14-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Ejercicio 14</button>
+    </li>
     </ul>
 
     <div class="tab-content" id="myTabContent">
@@ -72,7 +87,8 @@
     <form method="POST">
         <label for="numero">Ingresa un número:</label>
         <input type="number" name="numero" id="numero">
-        <button type="submit">Enviar</button>
+        <br><br>
+        <button type="submit" class="btn btn-primary mb-3">Enviar</button>
     </form>
     <?php
     $numero = $_POST['numero'];
@@ -84,7 +100,8 @@
     <form method="POST">
         <label for="numeromultiplicado">Ingresa un número:</label>
         <input type="number" name="numeromultiplicado" id="numeromultiplicado">
-        <button type="submit">Enviar</button>
+        <br><br>
+        <button type="submit" class="btn btn-primary mb-3">Enviar</button>
     </form>
     <?php
     $numeromultiplicado = $_POST['numeromultiplicado'];
@@ -104,7 +121,7 @@
         <input type="number" name="numero2" id="numero2">
         <br>
         <br>
-        <button type="submit">Enviar</button>
+        <button type="submit" class="btn btn-primary mb-3">Enviar</button>
         <br>
         <br>
     </form>
@@ -126,7 +143,7 @@
         <input type="number" name="numerosuma2" id="numerosuma2">
         <br>
         <br>
-        <button type="submit">Enviar</button>
+        <button type="submit" class="btn btn-primary mb-3">Enviar</button>
     </form>
     <?php
     $numerosuma1 = $_POST['numerosuma1'];
@@ -145,7 +162,7 @@
         <input type="number" name="cantidad" id="cantidad">
         <br>
         <br>
-        <button type="submit">Enviar</button>
+        <button type="submit" class="btn btn-primary mb-3">Enviar</button>
     </form>
     <?php
     $cantidad = $_POST['cantidad'];
@@ -178,10 +195,10 @@
         <input type="number" name="cantidadPC" id="cantidadPC">
         <br>
         <br>
-        <button type="submit">Enviar</button>
+        <button type="submit" class="btn btn-primary mb-3">Enviar</button>
     </form>
     <?php
-    $cantidadDolares = $_POST['cantidadDolares'];
+    /*$cantidadDolares = $_POST['cantidadDolares'];
     $cantidadEuros = $_POST['cantidadEuros'];
     $cantidadPC = $_POST['cantidadPC'];
     $DolarColombia = $cantidadPC / $cantidadDolares;
@@ -194,9 +211,100 @@
     <br>
     <?php
     echo "Valor equivalente de euros a colombianos: $EuroColombia";
+    */?>
+    </div></div>
+
+    <div class="tab-pane fade" id="ejercicio-10-pane" role="tabpanel" aria-labelledby="ejercicio-10" tabindex="0"><div class="alert alert-success" role="alert">
+    <form method="POST">
+        <label for="exampleFormControlInput1" class="form-label">Ingrese la temperatura en grados celcios: </label>
+        <input type="number" class="form-control" name="celcios" placeholder="Temperatura en °C">
+        <br>
+        <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+        </form>
+    <?php
+        // Declaramos las variables
+        $gradosCentigrados = intval($_GET["celcios"]);
+        $gradosFahrenheit = 0;
+
+        // Comprobamos si el valor ingresado es un número
+        if (!is_numeric($gradosCentigrados)) {
+            echo "El valor ingresado no es un número.";
+            exit;
+        }
+
+        // Convertimos los grados centígrados a grados Fahrenheit
+        $gradosFahrenheit = round($gradosCentigrados * 9 / 5 + 32, 2);
+
+        // Mostramos los resultados
+        echo 'Los grados centígrados ingresados fueron de: ' . $gradosCentigrados . '<br>';
+        echo "Los grados centígrados ingresados equivalen a " . $gradosFahrenheit . " grados Fahrenheit.";
+
+    ?>
+    </div></div>
+    
+    <div class="tab-pane fade" id="ejercicio-11-pane" role="tabpanel" aria-labelledby="ejercicio-11" tabindex="0"><div class="alert alert-success" role="alert">
+    <form action="">
+        <label for="exampleFormControlInput1" class="form-label">Ingrese su año de nacimiento: </label>
+        <input type="number" class="form-control" name="añoNacimiento" placeholder="Año de nacimiento">
+        <br>
+        <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+        </form>
+    <?php
+        // Declaramos las variables
+        $añoActual = date("Y");
+        $añoNacimiento = intval($_GET["añoNacimiento"]);
+        $edad = 0;
+        // Calculamos la edad
+        $edad = $añoActual - $añoNacimiento;
+
+        // Mostramos los resultados
+        echo "La edad de la persona es de " . $edad . " años.";
+
     ?>
     </div></div>
 
+    <div class="tab-pane fade" id="ejercicio-12-pane" role="tabpanel" aria-labelledby="ejercicio-12" tabindex="0"><div class="alert alert-success" role="alert">
+        <label for="exampleFormControlInput1" class="form-label">Tablas de multiplicar del 1 hasta 10: </label>
+        <br>
+        <?php
+        // Declaramos las variables
+        $numero = 1;
+        // Imprimimos la tabla de multiplicar
+        for ($i = 0; $i <= 10; $i++) {
+            echo $numero . " x " . $i . " = " . ($numero * $i) . "<br>";
+        }
+        ?>
+    </div></div>
+    
+    <div class="tab-pane fade" id="ejercicio-13-pane" role="tabpanel" aria-labelledby="ejercicio-13" tabindex="0"><div class="alert alert-success" role="alert">
+        <label for="exampleFormControlInput1" class="form-label">Tablas de multiplicar del 5 hasta 10: </label>
+        <br>
+        <?php
+        // Declaramos las variables
+        $numero = 5;
+        // Imprimimos la tabla de multiplicar
+        for ($i = 0; $i <= 10; $i++) {
+            echo $numero . " x " . $i . " = " . ($numero * $i) . "<br>";
+        }
+        ?>
+    </div></div>
+    
+    <div class="tab-pane fade" id="ejercicio-14-pane" role="tabpanel" aria-labelledby="ejercicio-14" tabindex="0"><div class="alert alert-success" role="alert">
+    <form action="">
+        <label for="exampleFormControlInput1" class="form-label">Ingrese un numero para mostrarle su tabla de multiplicar: </label>
+        <input type="number" class="form-control" name="tablaMultiplicar" placeholder="Numero">
+        <br>
+        <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+        </form>
+    <?php
+        // Declaramos las variables
+        $numero = intval($_GET["tablaMultiplicar"]);
+        // Imprimimos la tabla de multiplicar
+        for ($i = 0; $i <= 10; $i++) {
+            echo $numero . " x " . $i . " = " . ($numero * $i) . "<br>";
+        }
+    ?>
+    </div></div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
